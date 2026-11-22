@@ -1,55 +1,136 @@
-#<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Географическая викторина</title>
-</head>
-<body>
-  <h1>Географическая викторина</h1>
-  <div id="quiz"></div>
-  <button id="next">Следующий вопрос</button>
-  <p id="result"></p>
+# Орбита знаний
 
-  <script>
-    let quiz = [];
-    let current = 0;
-    let score = 0;
+Интерактивная викторина о космосе: 10 вопросов о планетах
+и Солнечной системе с вариантами ответов и объяснениями.
 
-    fetch("1.json")
-      .then(response => response.json())
-      .then(data => {
-        quiz = data;
-        showQuestion();
-      });
+## Статус проекта
 
-    function showQuestion() {
-      const q = quiz[current];
-      document.getElementById("quiz").innerHTML = `
-        <p><b>Вопрос ${current + 1} из ${quiz.length}</b></p>
-        <p>${q.question}</p>
-        <input id="answer" placeholder="Ваш ответ">
-      `;
-    }
+Локальная версия реализована.
+Публикация и итоговая проверка выполняются по TEST_CHECKLIST.md.
 
-    document.getElementById("next").onclick = () => {
-      const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
-      const correct = quiz[current].answer.trim().toLowerCase();
+## Возможности
 
-      if (userAnswer === correct) {
-        score++;
-      }
+- Главная страница с описанием приложения.
+- 10 вопросов с четырьмя вариантами ответа.
+- Проверка выбранного ответа.
+- Пояснение после каждого вопроса.
+- Подсчёт правильных ответов.
+- Индикатор прогресса.
+- Сохранение проверенных ответов.
+- Продолжение незавершённой попытки.
+- История последних 30 завершённых попыток.
+- Лучший результат среди сохранённых попыток.
+- Повторное прохождение.
+- Адаптивное оформление для узких экранов.
 
-      current++;
+## Технологии
 
-      if (current < quiz.length) {
-        showQuestion();
-      } else {
-        document.getElementById("quiz").innerHTML = "";
-        document.getElementById("next").style.display = "none";
-        document.getElementById("result").textContent =
-          `Ваш результат: ${score} из ${quiz.length}`;
-      }
-    };
-  </script>
-</body>
-</html>
+- HTML
+- CSS
+- JavaScript
+- JSON
+- localStorage
+- GitHub Pages — для публикации
+
+Сторонние JavaScript-библиотеки не используются.
+Python нужен только для локального HTTP-сервера.
+
+## Структура проекта
+
+```text
+MyVibeCodingProgect/
+├── index.html
+├── data.json
+├── README.md
+├── TEST_CHECKLIST.md
+└── static/
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   └── app.js
+    └── images/
+        ├── planet.svg
+        ├── rocket.svg
+        └── galaxy.svg
+```
+
+## Локальный запуск
+
+1. Установить Python, если его ещё нет.
+2. Открыть терминал в папке проекта.
+3. Выполнить:
+
+```bash
+python -m http.server 8000
+```
+
+4. Открыть в браузере:
+
+```text
+http://localhost:8000
+```
+
+Для остановки сервера нажать Ctrl + C в терминале.
+
+Открывать index.html двойным щелчком для прохождения
+викторины не следует: приложение загружает data.json
+через HTTP.
+
+## Как пользоваться
+
+1. Нажать «Начать викторину».
+2. Выбрать один вариант.
+3. Нажать «Проверить ответ».
+4. Прочитать результат и объяснение.
+5. Перейти к следующему вопросу.
+6. После последнего вопроса посмотреть итог.
+
+Незавершённую попытку можно продолжить с главной страницы.
+Завершённые попытки отображаются в разделе «Мой прогресс».
+
+## Хранение данных
+
+Вопросы находятся в отдельном файле data.json.
+
+Проверенные ответы и история результатов сохраняются
+в localStorage браузера.
+
+Ограничения:
+
+- Результаты не синхронизируются между устройствами.
+- Другой браузер имеет отдельное хранилище.
+- Локальная и опубликованная версии имеют отдельный прогресс.
+- Очистка данных сайта может удалить прогресс.
+- При изменении набора вопросов сохранённые данные
+  предыдущей версии не используются.
+- Если браузер запрещает сохранение, приложение
+  показывает предупреждение.
+- Непроверенный выбор ответа не сохраняется.
+
+## Проверка качества
+
+Ручные проверки перечислены в TEST_CHECKLIST.md.
+Выполненные проверки отмечаются после фактического тестирования.
+
+Автоматические тесты пока не реализованы.
+
+## Изображения
+
+Три SVG-иллюстрации находятся в static/images/.
+Изображения включены в проект и не требуют внешней загрузки.
+
+## Источники вопросов
+
+Материалы NASA Science:
+
+- https://science.nasa.gov/solar-system/planets/
+- https://science.nasa.gov/solar-system/planet-sizes-and-locations-in-our-solar-system/
+- https://science.nasa.gov/solar-system/temperatures-across-our-solar-system/
+
+## Автор
+
+Ирина Лукашева
+
+## Опубликованная версия
+
+Ссылка будет добавлена после успешного развёртывания GitHub Pages.

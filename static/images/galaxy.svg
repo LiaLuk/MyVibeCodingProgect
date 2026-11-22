@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200">
+  <defs>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#c6b4ff" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#7357e8" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="spiral" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#70d7ff"/>
+      <stop offset="0.5" stop-color="#b79aff"/>
+      <stop offset="1" stop-color="#7357e8"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="120" cy="100" rx="105" ry="80" fill="url(#glow)"/>
+
+  <g transform="rotate(-22 120 100)" fill="none">
+    <ellipse
+      cx="120" cy="100" rx="94" ry="43"
+      stroke="#7357e8" stroke-width="12" opacity="0.2"
+    />
+    <ellipse
+      cx="120" cy="100" rx="72" ry="31"
+      stroke="url(#spiral)" stroke-width="10" opacity="0.5"
+    />
+    <path
+      d="M40 108C45 54 199 55 192 105C187 143 82 147 72 108
+         C64 78 157 73 164 99C169 118 111 126 105 106
+         C100 95 126 88 132 100"
+      stroke="url(#spiral)"
+      stroke-width="7"
+      stroke-linecap="round"
+    />
+  </g>
+
+  <circle cx="120" cy="100" r="13" fill="#ddd3ff"/>
+  <circle cx="120" cy="100" r="6" fill="#ffffff"/>
+
+  <g fill="#d8edff">
+    <circle cx="37" cy="45" r="2"/>
+    <circle cx="192" cy="40" r="3"/>
+    <circle cx="210" cy="140" r="2"/>
+    <circle cx="56" cy="162" r="3"/>
+    <circle cx="155" cy="165" r="2"/>
+  </g>
+
+  <g stroke="#70d7ff" stroke-width="2" stroke-linecap="round">
+    <path d="M70 33v12m-6-6h12"/>
+    <path d="M184 158v16m-8-8h16"/>
+  </g>
+</svg>

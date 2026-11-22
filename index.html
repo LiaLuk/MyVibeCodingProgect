@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Орбита знаний — интерактивная викторина о космосе."
+  >
+  <meta name="theme-color" content="#080d21">
+
+  <title>Орбита знаний — космическая викторина</title>
+
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src="static/js/app.js" defer></script>
+</head>
+
+<body>
+  <div class="site">
+    <header class="header">
+      <a class="logo" href="#home" aria-label="Орбита знаний — главная">
+        <span class="logo-icon" aria-hidden="true">О</span>
+
+        <span class="logo-text">
+          Орбита знаний
+          <span class="logo-caption">КОСМИЧЕСКАЯ ВИКТОРИНА</span>
+        </span>
+      </a>
+
+      <nav class="navigation" aria-label="Основная навигация">
+        <a class="nav-link" href="#home" data-nav="home">Главная</a>
+        <a class="nav-link" href="#progress" data-nav="progress">
+          Мой прогресс
+        </a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- Главная страница -->
+      <section id="home-screen" class="screen" aria-labelledby="home-title">
+        <div class="hero">
+          <div class="hero-content">
+            <p class="eyebrow">ТВОЯ МИССИЯ НАЧИНАЕТСЯ ЗДЕСЬ</p>
+
+            <h1 id="home-title">
+              Космос ближе,<br>
+              <span class="gradient-text">чем кажется.</span>
+            </h1>
+
+            <p class="hero-description">
+              Отправляйся в путешествие по Вселенной.
+              Проверь свои знания о планетах, звёздах
+              и космических открытиях.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#quiz">
+                Начать викторину
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <a class="button button-secondary" href="#progress">
+                Посмотреть прогресс
+              </a>
+            </div>
+
+            <p class="hero-note">
+              Без регистрации. В удобном для тебя темпе.
+            </p>
+          </div>
+
+          <div class="hero-art">
+            <div class="orbit orbit-one" aria-hidden="true"></div>
+            <div class="orbit orbit-two" aria-hidden="true"></div>
+
+            <img
+              class="planet-image"
+              src="static/images/planet.svg"
+              alt="Фиолетовая планета с голубыми кольцами"
+              width="600"
+              height="480"
+            >
+
+            <span class="art-label">КУРС НА НОВЫЕ ЗНАНИЯ</span>
+          </div>
+        </div>
+
+        <section class="facts" aria-label="Формат викторины">
+          <div class="fact">
+            <span class="fact-value">10</span>
+            <span class="fact-label">вопросов о космосе</span>
+          </div>
+
+          <div class="fact">
+            <span class="fact-value">4</span>
+            <span class="fact-label">варианта на выбор</span>
+          </div>
+
+          <div class="fact">
+            <span class="fact-value">1</span>
+            <span class="fact-label">верный ответ</span>
+          </div>
+        </section>
+
+        <section class="features" aria-labelledby="features-title">
+          <div class="section-heading">
+            <p class="eyebrow">МАЛЕНЬКИЕ ШАГИ — БОЛЬШИЕ ОТКРЫТИЯ</p>
+            <h2 id="features-title">Что ждёт в полёте?</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span class="feature-number">01 / ИССЛЕДУЙ</span>
+              <h3>Узнавай новое</h3>
+              <p>
+                Вопросы о нашей Солнечной системе
+                и удивительном мире за её пределами.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <span class="feature-number">02 / ПРОВЕРЯЙ</span>
+              <h3>Проверяй себя</h3>
+              <p>
+                Выбирай ответы и получай короткие
+                объяснения после каждого вопроса.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <span class="feature-number">03 / РАЗВИВАЙСЯ</span>
+              <h3>Следи за результатом</h3>
+              <p>
+                Возвращайся к прохождению
+                и улучшай свой личный рекорд.
+              </p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <!-- Пока это демонстрационный экран -->
+      <section
+        id="quiz-screen"
+        class="screen"
+        aria-labelledby="quiz-title"
+        hidden
+      >
+        <div class="panel">
+          <img
+            class="panel-image"
+            src="static/images/rocket.svg"
+            alt=""
+            width="240"
+            height="200"
+          >
+
+          <p class="eyebrow">ПРЕДПОЛЁТНАЯ ПОДГОТОВКА</p>
+          <h1 id="quiz-title" class="panel-title">
+            Готовимся к запуску
+          </h1>
+
+          <p class="panel-description">
+            Дизайн уже готов. На следующем этапе
+            здесь появятся вопросы, варианты ответов
+            и счётчик баллов.
+          </p>
+
+          <span class="status-label">Демонстрация интерфейса</span>
+
+          <a class="button button-primary" href="#home">
+            Вернуться на главную
+          </a>
+        </div>
+      </section>
+
+      <section
+        id="progress-screen"
+        class="screen"
+        aria-labelledby="progress-title"
+        hidden
+      >
+        <div class="panel">
+          <img
+            class="panel-image"
+            src="static/images/galaxy.svg"
+            alt=""
+            width="240"
+            height="200"
+          >
+
+          <p class="eyebrow">ТВОЙ БОРТОВОЙ ЖУРНАЛ</p>
+          <h1 id="progress-title" class="panel-title">
+            Здесь будут твои достижения
+          </h1>
+
+          <p class="panel-description">
+            После подключения викторины здесь появятся
+            история попыток, лучший результат
+            и сохранённый прогресс.
+          </p>
+
+          <span class="status-label">Хранение данных ещё не подключено</span>
+
+          <a class="button button-primary" href="#home">
+            На главную
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Орбита знаний</span>
+      <span>Открывай Вселенную — вопрос за вопросом.</span>
+    </footer>
+  </div>
+</body>
+</html>
